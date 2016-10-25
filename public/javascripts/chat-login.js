@@ -26,7 +26,7 @@ class ChatLogin extends Polymer.Element {
                 /** The HTML class corresponding to the login state of the current user */
                 _loginStateClass: {
                     type: String,
-                    computed: '_computeStateClass(isUserLogged)'
+                    computed: '_computeStateClass(_isUserLogged)'
                 },
                 /** The error message if the login attempt fails */
                 _loginErrorMessage: String
@@ -89,8 +89,8 @@ class ChatLogin extends Polymer.Element {
      *
      * @param {Boolean} _isUserLogged: the login state of the current user
      */
-    _computeStateClass (isUserLogged) {
-        if (isUserLogged) {
+    _computeStateClass (_isUserLogged) {
+        if (_isUserLogged) {
             return 'login--logged';
         } 
         return '';
