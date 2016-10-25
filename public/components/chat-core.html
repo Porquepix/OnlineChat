@@ -1,0 +1,103 @@
+<link rel="import" href="/components/chat-users.html"></link>
+
+<dom-module id="chat-core">
+    <template>
+        <style>
+            * { 
+                box-sizing: border-box; 
+            }
+
+            :host {
+                display: block;
+                font-size: 1em;
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+            }
+
+            button {
+                background: #8bc34a; 
+                border: none; 
+                padding: 10px; 
+                border-radius: 3px;
+                font-size: 1.1em;
+                color: rgba(255, 255, 255, 0.87);
+                cursor: pointer;
+            }
+
+            button:hover {
+                background: #9CCC65; 
+            }
+
+            input {
+                border: 0; 
+                padding: 10px;  
+                border-radius: 3px;
+                font-size: 1.1em;
+            }
+
+            .chat {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+            .chat__messages-container { 
+                list-style-type: none; 
+                margin: 0; 
+                padding: 30px 0 0 0; 
+                overflow-y: auto;
+                width: 100%;
+                height: calc(100% - 48px);
+            }
+
+            .chat__messages-container li { 
+                padding: 5px 10px; 
+            }
+
+            .chat__messages-container li:nth-child(odd) { 
+                background: #eee; 
+            }
+
+            .chat__interface { 
+                background: #673AB7; 
+                padding: 5px; 
+                position: absolute; 
+                bottom: 0;
+                left: 0; 
+                width: 100%;
+                height: 48px;
+                display: flex;
+                justify-content: space-between;
+                box-shadow: 0px -3px 3px rgba(0, 0, 0, 0.27);
+            }
+
+            .chat-interface__messagebox { 
+                width: calc(100% - 86px);  
+            }
+
+            .chat-interface__send-btn { 
+                width: 80px; 
+            }
+        </style>
+
+        <div class="chat">
+            <chat-users socket="[[socket]]"></chat-users>
+
+            <ul id="messages-container" class="chat__messages-container">
+                <dom-repeat items="{{messages}}">
+                    <template>
+                        <li><b>{{ item.username }}:</b> {{ item.message }}</li>
+                    </template>
+                </dom-repeat>
+            </ul>
+
+            <form action="" id="chat-interface" class="chat__interface">
+                <input class="chat-interface__messagebox" id="messagebox" autocomplete="off" />
+                <button class="chat-interface__send-btn">Send</button>
+            </form>
+        </div>
+    </template>
+    <script src="/javascripts/chat-core.js"></script>
+</dom-module>

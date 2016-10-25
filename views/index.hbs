@@ -1,0 +1,12 @@
+<script src="/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="/polymer/polymer.html"></link>
+<link rel="import" href="/polymer/polymer-element.html"></link>
+<link rel="import" href="/components/online-chat.html"></link>
+
+<online-chat></online-chat>
+<online-chat></online-chat>
+<script>
+    document.querySelectorAll('online-chat').forEach(el => {
+        el.setAttribute('chat-url', {{{ chatURL }}});
+    });
+</script>
