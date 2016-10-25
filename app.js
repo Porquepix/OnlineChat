@@ -1,19 +1,15 @@
-// Require HTTP module (to start server) and Socket.IO
-var http = require('http');
-var io = require('socket.io');
+const express = require('express');
+const socketIO = require('socket.io');
+const path = require('path');
+
 const PORT = process.env.PORT || 3000;
+const INDEX = path.join(__dirname, 'index.html');
 
-// Start the server at 80
-var server = http.createServer(function (req, res) { 
-    res.end('Hello World !');
-});
-server.listen(PORT);
+const server = express()
+  .use((req, res) => res.sendFile(INDEX) )
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-
-// Create a Socket.IO instance, passing it our server
-var socket = io(server);
+const io = socketIO(server);
 
 // Create the chat instance
-require('./chat.js')(socket)();
-
-console.log('Server running at localhost:' + port + '/');
+require('./chat.js')(io)();
