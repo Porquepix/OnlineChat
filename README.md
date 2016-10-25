@@ -14,7 +14,7 @@ This two parts have their own branch in this repo.
 1. Download this project.
 2. Run `npm install` in the WebServer and in the ChatServer.
 3. If you are on Windows, run `bower install` in the WebServer.
-4. Define the `CHATURL` variable for the WebServer (In Windows, `set CHARURL=...`). This CHATURL is the url where the ChatServer is accesible.
+4. Define the `CHATURL` variable for the WebServer (In Windows, `set CHATURL=...`). This CHATURL is the url where the ChatServer is accesible.
 5. Run `npm start` in the WebServer and in the ChatServer.
 
 
