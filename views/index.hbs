@@ -3,9 +3,4 @@
 <link rel="import" href="/polymer/polymer-element.html"></link>
 <link rel="import" href="/components/online-chat.html"></link>
 
-<online-chat></online-chat>
-<script>
-    document.querySelectorAll('online-chat').forEach(el => {
-        el.setAttribute('chat-url', {{{ chatURL }}});
-    });
-</script>
+<online-chat chat-url="{{{ chatURL }}}"></online-chat>

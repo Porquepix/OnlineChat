@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { chatURL: '\'https://afternoon-castle-81745.herokuapp.com/\'' });
+  res.render('index', { chatURL: process.env.CHATURL });
 });
 
 module.exports = router;

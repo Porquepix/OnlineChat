@@ -1,3 +1,8 @@
+<!--
+The login page of the chat.
+
+This componenent handles the chat login phase.
+-->
 <dom-module id="chat-login">
     <template>
         <style>
@@ -102,16 +107,16 @@
             }
         </style>
 
-        <div class$="login__page {{ loginStateClass }}" id="login">
+        <div class$="login__page {{ _loginStateClass }}" id="login">
             <div class="login__container">
                 <h1>OnlineChat</h1>
                 <h3 class="status" title="This status depends either on your connection or on the server.">
                     Server: 
-                    <span hidden$="{{ !isServerOnline }}" class="status--online">Reachable</span>
-                    <span hidden$="{{ isServerOnline }}" class="status--offline">Unreachable</span>
+                    <span hidden$="{{ !_isServerOnline }}" class="status--online">Reachable</span>
+                    <span hidden$="{{ _isServerOnline }}" class="status--offline">Unreachable</span>
                 </h3>
                 <form class="login__form" id="login-form">
-                    <div hidden$="{{ !loginErrorMessage }}" class="login-form__error-message">{{ loginErrorMessage }}</div>
+                    <div hidden$="{{ !_loginErrorMessage }}" class="login-form__error-message">{{ _loginErrorMessage }}</div>
                     <input class="login__usernamebox" id="username" placeholder="Username" />
                     <button class="login__login-btn">Login</button>
                 </form>

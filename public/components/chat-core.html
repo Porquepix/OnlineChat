@@ -1,5 +1,10 @@
 <link rel="import" href="/components/chat-users.html"></link>
 
+<!--
+The Core of the chat.
+
+This componenent handles basic functionalities of chat such as message sending and reception.
+-->
 <dom-module id="chat-core">
     <template>
         <style>
@@ -83,10 +88,10 @@
         </style>
 
         <div class="chat">
-            <chat-users socket="[[socket]]"></chat-users>
+            <chat-users socket="[[ socket ]]"></chat-users>
 
             <ul id="messages-container" class="chat__messages-container">
-                <dom-repeat items="{{messages}}">
+                <dom-repeat items="{{ _messages }}">
                     <template>
                         <li><b>{{ item.username }}:</b> {{ item.message }}</li>
                     </template>

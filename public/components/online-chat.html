@@ -3,6 +3,11 @@
 <link rel="import" href="/components/chat-core.html"></link>
 <link rel="import" href="/components/chat-login.html"></link>
 
+<!--
+The OnlineChat Application.
+
+This componenent connects all the chat functionalities.
+-->
 <dom-module id="online-chat">
     <template>
         <style>
@@ -25,8 +30,8 @@
             }
         </style>
         <div class="container">
-            <chat-core socket="[[socket]]"></chat-core>
-            <chat-login socket="[[socket]]"></chat-login>
+            <chat-core socket="[[ socket ]]"></chat-core>
+            <chat-login socket="[[ socket ]]"></chat-login>
         </div>
     </template>
     <script src="/javascripts/online-chat.js"></script>

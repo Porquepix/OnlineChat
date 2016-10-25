@@ -1,3 +1,8 @@
+<!--
+The user manager of the chat.
+
+This componenent handles functionalities about the user of the chat such as the connected users list.
+-->
 <dom-module id="chat-users">
     <template>
         <style>
@@ -100,7 +105,7 @@
         <div class="online-users_container">
             <h1>Connected users</h1>
             <ul class="users-list">
-                <dom-repeat items="{{users}}" sort="_sortUid">
+                <dom-repeat items="{{ _users }}" sort="_sortUid">
                     <template>
                         <li><b>{{ item }}</li>
                     </template>
